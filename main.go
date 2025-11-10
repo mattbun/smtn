@@ -39,10 +39,11 @@ var cmd *cli.Command = &cli.Command{
 		},
 
 		&cli.StringSliceFlag{
-			Name:    FlagNotificationUrl,
-			Aliases: []string{"n"},
-			Usage:   "Shoutrrr notification url(s)",
-			Sources: cli.EnvVars("NOTIFICATION_URL"),
+			Name:     FlagNotificationUrl,
+			Aliases:  []string{"n"},
+			Usage:    "Shoutrrr notification url(s)",
+			Sources:  cli.EnvVars("NOTIFICATION_URL"),
+			Required: true,
 		},
 
 		&cli.IntFlag{
