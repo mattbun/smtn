@@ -22,6 +22,7 @@ func (r NotifierMessageReceiver) OnMessage(message smtp.Message) error {
 		slog.Error("Error sending notification", slog.Any("error", err))
 	}
 
+	slog.Debug("Successfully sent notification")
 	return err
 }
 
