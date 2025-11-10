@@ -5,13 +5,17 @@ import (
 	"os"
 )
 
-func configureLogging(verbose bool) {
-	logLevel := slog.LevelInfo
+func logLevel(verbose bool) slog.Level {
 	if verbose {
-		logLevel = slog.LevelDebug
+		return slog.LevelDebug
 	}
+
+	return slog.LevelInfo
+}
+
+func configureLogging(verbose bool) {
 	h := slog.NewTextHandler(os.Stderr, &slog.HandlerOptions{
-		Level: logLevel,
+		Level: logLevel(verbose),
 	})
 
 	slog.SetDefault(slog.New(h))
