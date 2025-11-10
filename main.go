@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	"log"
+	"log/slog"
 	"os"
 
 	"github.com/mattbun/smtprrr/internal/smtp"
@@ -83,6 +83,7 @@ var cmd *cli.Command = &cli.Command{
 
 func main() {
 	if err := cmd.Run(context.Background(), os.Args); err != nil {
-		log.Fatal(err)
+		slog.Error(err.Error())
+		os.Exit(1)
 	}
 }
