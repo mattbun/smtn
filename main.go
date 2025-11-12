@@ -5,7 +5,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/mattbun/smtprrr/internal/smtp"
+	"github.com/mattbun/smtn/internal/smtp"
 	"github.com/urfave/cli/v3"
 )
 
@@ -18,8 +18,8 @@ const (
 )
 
 var cmd *cli.Command = &cli.Command{
-	Name:  "smtprrr",
-	Usage: "Run a SMTP server that turns messages into notifications",
+	Name:  "smtn",
+	Usage: "Run a SMTP server that forwards any messages it receives to one or more notification services",
 
 	Flags: []cli.Flag{
 		&cli.BoolFlag{

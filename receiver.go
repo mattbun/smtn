@@ -3,8 +3,8 @@ package main
 import (
 	"log/slog"
 
-	"github.com/mattbun/smtprrr/internal/notify"
-	"github.com/mattbun/smtprrr/internal/smtp"
+	"github.com/mattbun/smtn/internal/notify"
+	"github.com/mattbun/smtn/internal/smtp"
 )
 
 // NotifierMessageReceiver is an implementation of [smtp.MessageReceiver] that sends messages to a [notify.Notifier].

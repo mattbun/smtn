@@ -49,10 +49,10 @@ func TestE2E(t *testing.T) {
 	httpUrl, err := url.Parse(httpServer.URL)
 	assert.NoError(t, err)
 
-	// Start smtprrr and tell it to hit the http server
+	// Start smtn and tell it to hit the http server
 	go func() {
 		args := []string{
-			"smtprrr",
+			"smtn",
 			"--notification-url",
 			fmt.Sprintf("generic://%s:%s?template=json&disabletls=yes", httpUrl.Hostname(), httpUrl.Port()),
 			"--port",

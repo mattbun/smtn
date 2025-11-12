@@ -1,4 +1,4 @@
-module github.com/mattbun/smtprrr
+module github.com/mattbun/smtn
 
 go 1.25.4
 

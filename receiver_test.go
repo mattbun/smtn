@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	"github.com/containrrr/shoutrrr/pkg/types"
-	"github.com/mattbun/smtprrr/internal/notify"
-	"github.com/mattbun/smtprrr/internal/smtp"
+	"github.com/mattbun/smtn/internal/notify"
+	"github.com/mattbun/smtn/internal/smtp"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )
