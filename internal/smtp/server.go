@@ -7,14 +7,22 @@ import (
 	"github.com/emersion/go-smtp"
 )
 
+// StartServerInput contains options for [StartServer].
 type StartServerInput struct {
-	Address           string
-	Port              int
+	// Address is the address that the server should listen on.
+	Address string
+
+	// Port is the port that the server should listen on.
+	Port int
+
+	// AllowInsecureAuth determines whether to allow insecure authentication.
 	AllowInsecureAuth bool
 
+	// MessageReceiver is a MessageReceiver to send new messages to.
 	MessageReceiver MessageReceiver
 }
 
+// StartServer starts the SMTP server.
 func StartServer(input StartServerInput) error {
 	server := smtp.NewServer(&Backend{MessageReceiver: input.MessageReceiver})
 

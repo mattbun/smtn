@@ -9,10 +9,13 @@ import (
 	"github.com/emersion/go-smtp"
 )
 
+// Session implements [github.com/emersion/go-smtp.Session].
 type Session struct {
+	// MessageReceiver defines a function to be run whenever a message is received.
 	MessageReceiver MessageReceiver
 }
 
+// Data parses a message and forwards it to the [MessageReceiver].
 func (s *Session) Data(r io.Reader) error {
 	message, err := mail.ReadMessage(r)
 	if err != nil {

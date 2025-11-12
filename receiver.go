@@ -7,10 +7,13 @@ import (
 	"github.com/mattbun/smtprrr/internal/smtp"
 )
 
+// NotifierMessageReceiver is an implementation of [smtp.MessageReceiver] that sends messages to a [notify.Notifier].
 type NotifierMessageReceiver struct {
+	// Notifier is a [notify.Notifier] to send messages to.
 	Notifier notify.Notifier
 }
 
+// OnMessage forwards a SMTP message to a [notify.Notifier].
 func (r NotifierMessageReceiver) OnMessage(message smtp.Message) error {
 	slog.Debug("Sending notification")
 
@@ -26,6 +29,7 @@ func (r NotifierMessageReceiver) OnMessage(message smtp.Message) error {
 	return err
 }
 
+// NewNotifierMessageReceiver creates a new [NotifierMessageReceiver].
 func NewNotifierMessageReceiver(urls []string) (NotifierMessageReceiver, error) {
 	notifier, err := notify.NewNotifier(urls)
 	if err != nil {
