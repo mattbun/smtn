@@ -28,7 +28,7 @@ GLOBAL OPTIONS:
 
 First off, figure out your notification URL based on [shoutrrr's docs](https://containrrr.dev/shoutrrr/services/overview/).
 
-### Running
+### Binaries
 
 Binaries can be downloaded from [Releases](https://github.com/mattbun/smtn/releases).
 
