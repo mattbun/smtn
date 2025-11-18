@@ -39,7 +39,6 @@ func (s *Session) Data(r io.Reader) error {
 	})
 }
 
-func (s *Session) AuthPlain(username, password string) error      { return nil }
 func (s *Session) Mail(from string, opts *smtp.MailOptions) error { return nil }
 func (s *Session) Rcpt(to string, opts *smtp.RcptOptions) error   { return nil }
 func (s *Session) Reset()                                         {}
