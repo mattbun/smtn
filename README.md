@@ -16,7 +16,6 @@ USAGE:
    smtn [global options]
 
 GLOBAL OPTIONS:
-   --allow-insecure, -i                                                           Allow insecure auth [$ALLOW_INSECURE]
    --listen-addr string, -l string                                                Address that the SMTP server should listen on (default: "127.0.0.1") [$LISTEN_ADDR]
    --notification-url string, -n string [ --notification-url string, -n string ]  Shoutrrr notification url(s) [$NOTIFICATION_URL]
    --port int, -p int                                                             Port that the SMTP server should listen on (default: 25) [$PORT]

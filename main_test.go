@@ -57,7 +57,6 @@ func TestE2E(t *testing.T) {
 			fmt.Sprintf("generic://%s:%s?template=json&disabletls=yes", httpUrl.Hostname(), httpUrl.Port()),
 			"--port",
 			fmt.Sprintf("%d", smtpPort),
-			"--allow-insecure",
 		}
 		cmd.Run(ctx, args)
 	}()

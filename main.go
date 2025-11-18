@@ -10,7 +10,6 @@ import (
 )
 
 const (
-	FlagAllowInsecure   = "allow-insecure"
 	FlagListenAddr      = "listen-addr"
 	FlagNotificationUrl = "notification-url"
 	FlagPort            = "port"
@@ -22,14 +21,6 @@ var cmd *cli.Command = &cli.Command{
 	Usage: "Run a SMTP server that forwards any messages it receives to one or more notification services",
 
 	Flags: []cli.Flag{
-		&cli.BoolFlag{
-			Name:    FlagAllowInsecure,
-			Aliases: []string{"i"},
-			Usage:   "Allow insecure auth",
-			Value:   false,
-			Sources: cli.EnvVars("ALLOW_INSECURE"),
-		},
-
 		&cli.StringFlag{
 			Name:    FlagListenAddr,
 			Aliases: []string{"l"},
@@ -72,9 +63,8 @@ var cmd *cli.Command = &cli.Command{
 		}
 
 		return smtp.StartServer(smtp.StartServerInput{
-			Address:           cmd.String(FlagListenAddr),
-			Port:              cmd.Int(FlagPort),
-			AllowInsecureAuth: cmd.Bool(FlagAllowInsecure),
+			Address: cmd.String(FlagListenAddr),
+			Port:    cmd.Int(FlagPort),
 
 			MessageReceiver: &notifier,
 		})
