@@ -13,7 +13,7 @@ type NotifierMessageReceiver struct {
 	Notifier notify.Notifier
 }
 
-// OnMessage forwards a SMTP message to a [notify.Notifier].
+// OnMessage forwards an SMTP message to a [notify.Notifier].
 func (r NotifierMessageReceiver) OnMessage(message smtp.Message) error {
 	slog.Debug("Sending notification")
 

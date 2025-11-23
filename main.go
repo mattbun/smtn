@@ -18,7 +18,7 @@ const (
 
 var cmd *cli.Command = &cli.Command{
 	Name:  "smtn",
-	Usage: "Run a SMTP server that forwards any messages it receives to one or more notification services",
+	Usage: "Run an SMTP server that forwards any messages it receives to one or more notification services",
 
 	Flags: []cli.Flag{
 		&cli.StringFlag{

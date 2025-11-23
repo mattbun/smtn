@@ -1,6 +1,6 @@
 # smtn
 
-smtn is a [SMTP](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol) server that forwards any messages it receives to one or more notification services.
+smtn is an [SMTP](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol) server that forwards any messages it receives to one or more notification services.
 
 It uses [shoutrrr](https://github.com/containrrr/shoutrrr) under the hood so it supports any of [these services](https://containrrr.dev/shoutrrr/services/overview/), including webhooks!
 
@@ -10,7 +10,7 @@ smtn can be configured via command line flag or by environment variable:
 
 ```
 NAME:
-   smtn - Run a SMTP server that forwards any messages it receives to one or more notification services
+   smtn - Run an SMTP server that forwards any messages it receives to one or more notification services
 
 USAGE:
    smtn [global options]
